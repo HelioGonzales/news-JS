@@ -6,10 +6,7 @@ interface ReqOptions {
 }
 
 class Loader {
-    constructor(public baseLink: string, public options: BaseOptions) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
+    constructor(public baseLink: string, public options: BaseOptions) {}
 
     getResp<T>(
         options: {

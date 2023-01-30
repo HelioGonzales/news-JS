@@ -29,15 +29,15 @@ export interface ModelSource {
     url: string;
 }
 
-interface BaseResponse {
+interface BaseRes {
     status: ResStatus;
 }
 
-export interface ModelSourcesResponse extends BaseResponse {
+export interface ModelSourcesRes extends BaseRes {
     sources: ModelSource[];
 }
 
-export interface ModelArticlesResponse extends BaseResponse {
+export interface ModelArticlesRes extends BaseRes {
     totalResults: number;
     articles: Article[];
 }

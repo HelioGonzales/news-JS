@@ -1,9 +1,9 @@
-import { ModelArticlesResponse, ModelSourcesResponse } from './../../models';
+import { ModelArticlesRes, ModelSourcesRes } from './../../models';
 
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback: (data: ModelSourcesResponse) => void) {
+    getSources(callback: (data: ModelSourcesRes) => void) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -12,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: (data: ModelArticlesResponse) => void) {
+    getNews(e: Event, callback: (data: ModelArticlesRes) => void) {
         let target: Element = e.target as HTMLElement;
         const newsContainer: Element = e.currentTarget as HTMLElement;
 
@@ -21,7 +21,7 @@ class AppController extends AppLoader {
                 const sourceId = target.getAttribute('data-source-id')!;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp<ModelArticlesResponse>(
+                    super.getResp<ModelArticlesRes>(
                         {
                             endpoint: 'everything',
                             options: {
